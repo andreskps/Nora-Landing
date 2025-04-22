@@ -1,7 +1,15 @@
+"use client"
 import Image from "next/image";
-import Link from "next/link";
+import React, { useState } from "react";
+import { RegisterModal } from "./RegisterModal";
 
 export const HeroSection = () => {
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+
+  const handleRegisterModalToggle = () => {
+    setIsRegisterModalOpen(!isRegisterModalOpen);
+  };
+
   return (
     <section
       className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 py-12 flex-1"
@@ -17,12 +25,12 @@ export const HeroSection = () => {
           llamada, rápido, 24/7 y gratis.
         </p>
         <div className="pt-4">
-          <Link
-            href="/register"
-            className="bg-[#20c9ca] hover:bg-[#1ab9ba] text-black px-6 py-2 rounded-md font-medium transition-colors"
+          <button
+            className="bg-[#20c9ca] hover:bg-[#1ab9ba] text-black px-6 py-2 rounded-md font-medium transition-colors cursor-pointer"
+            onClick={handleRegisterModalToggle}
           >
             Registrarte
-          </Link>
+          </button>
         </div>
       </div>
 
@@ -38,6 +46,12 @@ export const HeroSection = () => {
           />
         </div>
       </div>
+
+      {/* Register Modal Component */}
+      <RegisterModal 
+        isOpen={isRegisterModalOpen} 
+        onClose={handleRegisterModalToggle} 
+      />
     </section>
   );
 };
