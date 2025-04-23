@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 interface SubscriptionModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
+
+// Mapa de códigos telefónicos a códigos de país (ISO 3166-1 alpha-2)
+const countryCodeMap: Record<string, string> = {
+  '+57': 'co', // Colombia
+  '+51': 'pe', // Perú
+  '+52': 'mx', // México
+  '+591': 'bo', // Bolivia
+};
 
 export const SubscriptionModal = ({ isOpen, onClose }: SubscriptionModalProps) => {
   // Estado para manejar los datos del formulario
@@ -20,6 +28,7 @@ export const SubscriptionModal = ({ isOpen, onClose }: SubscriptionModalProps) =
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
+  const [showPhoneDropdown, setShowPhoneDropdown] = useState(false);
 
   if (!isOpen) return null;
 
@@ -30,6 +39,11 @@ export const SubscriptionModal = ({ isOpen, onClose }: SubscriptionModalProps) =
       ...prev,
       [id]: value
     }));
+  };
+
+  // Obtener el país actual para mostrar la bandera
+  const getCurrentCountryCode = (phoneCode: string) => {
+    return countryCodeMap[phoneCode] || 'co';
   };
 
   // Enviar datos al backend
@@ -131,17 +145,36 @@ export const SubscriptionModal = ({ isOpen, onClose }: SubscriptionModalProps) =
               <label htmlFor="phone" className="block text-sm font-medium text-[#20c9ca] mb-1">
                 Teléfono
               </label>
-              <div className="flex">
-                <select
-                  id="phoneCode"
-                  value={formData.phoneCode}
-                  onChange={handleChange}
-                  className="border border-gray-300 rounded-l-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#20c9ca] text-white bg-black"
-                >
-                  <option value="+57" className="text-white bg-black">+57</option>
-                  <option value="+1" className="text-white bg-black">+1</option>
-                  <option value="+34" className="text-white bg-black">+34</option>
-                </select>
+              <div className="flex relative">
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setShowPhoneDropdown(!showPhoneDropdown)}
+                    className="flex items-center space-x-2 border border-gray-300 rounded-l-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#20c9ca] text-white bg-black"
+                  >
+                    <span className={`fi fi-${getCurrentCountryCode(formData.phoneCode)}`}></span>
+                    <span>{formData.phoneCode}</span>
+                  </button>
+                  
+                  {showPhoneDropdown && (
+                    <div className="absolute top-full left-0 z-50 mt-1 w-40 bg-black border border-gray-300 rounded-md shadow-lg">
+                      {Object.entries(countryCodeMap).map(([code, country]) => (
+                        <button
+                          key={code}
+                          type="button"
+                          className="flex items-center w-full px-3 py-2 text-white hover:bg-gray-700"
+                          onClick={() => {
+                            setFormData(prev => ({ ...prev, phoneCode: code }));
+                            setShowPhoneDropdown(false);
+                          }}
+                        >
+                          <span className={`fi fi-${country} mr-2`}></span>
+                          <span>{code}</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
                 <input
                   type="tel"
                   id="phone"
@@ -153,6 +186,24 @@ export const SubscriptionModal = ({ isOpen, onClose }: SubscriptionModalProps) =
                 />
               </div>
             </div>
+
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-sm font-medium text-[#20c9ca] mb-1">
+                Correo electrónico
+              </label>
+              <input
+                type="email"
+                id="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#20c9ca] text-white bg-black placeholder-gray-400"
+                placeholder="Tu correo electrónico"
+                required
+              />
+
+            </div>
+
+
             <div className="mb-4">
               <label htmlFor="rol" className="block text-sm font-medium text-[#20c9ca] mb-1">
                 Rol
