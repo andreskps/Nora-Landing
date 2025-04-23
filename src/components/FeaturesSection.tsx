@@ -3,7 +3,7 @@ import { AnimatedFeatureRow } from './AnimatedFeatureRow'
 
 export const FeaturesSection = () => {
   return (
-    <section className='h-screen flex flex-col justify-between'>
+  <>
       <div className="container mx-auto">
         <h2 className="text-2xl md:text-3xl p-5 font-bold mb-5 text-left text-white">
           ¿QUÉ HACE NORA?
@@ -91,7 +91,7 @@ export const FeaturesSection = () => {
             },
           ]}
           direction="left"
-          speed={8}
+          speed={10}
           className="mb-20"
         />
       </div>
@@ -339,6 +339,6 @@ export const FeaturesSection = () => {
           </div>
         </div>
       </div>
-    </section>
+      </>
   )
 }
