@@ -35,7 +35,7 @@ export const CounterSection = () => {
   }, [days, hours, minutes, seconds]);
 
   return (
-    <section className="w-full bg-[#f8f7f2] text-black py-16">
+    <section className="w-full bg-[#f8f7f2] text-black py-16 h-screen">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold uppercase mb-4">
           Tu futuro hogar está aquí

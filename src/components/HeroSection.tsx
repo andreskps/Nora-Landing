@@ -12,7 +12,7 @@ export const HeroSection = () => {
 
   return (
     <section
-      className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 py-12 flex-1"
+      className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 py-12 flex-1 h-screen"
     >
       {/* Left Content */}
       <div className="md:w-1/2 space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
