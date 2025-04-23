@@ -10,14 +10,10 @@ export function FeatureBubble({
   className = "",
 }: FeatureBubbleProps) {
   return (
-    // <div className={`${color} rounded-full px-4 py-2 text-center shadow-md text-sm font-medium ${className}`}>
-    //   <p>{text}</p>
-    // </div>
-
     <div
-      className={`bg-[#20c9ca] rounded-full px-4 py-2 text-center shadow-md text-sm font-medium text-gray-800`}
+      className={`bg-[#20c9ca] rounded-full px-4 py-2 text-center shadow-md text-sm font-medium text-gray-800 w-64 h-14 flex items-center justify-center`}
     >
-      <p>{text}</p>
+      <p className="line-clamp-2">{text}</p>
     </div>
   );
 }

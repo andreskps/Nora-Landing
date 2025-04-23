@@ -35,27 +35,27 @@ export const CounterSection = () => {
   }, [days, hours, minutes, seconds]);
 
   return (
-    <section className="w-full bg-[#f8f7f2] text-black py-16 h-screen">
-      <div className="container mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold uppercase mb-4">
+    <section className="w-full bg-[#f8f7f2] text-black py-8 md:py-16 h-screen flex items-center justify-center">
+      <div className="container mx-auto px-4 sm:px-6 text-center max-w-xl sm:max-w-2xl md:max-w-4xl">
+        <h2 className="text-2xl sm:text-3xl font-bold uppercase mb-4">
           Tu futuro hogar está aquí
         </h2>
-        <p className="text-lg mb-6">Regístrate y vive esta experiencia en:</p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 mt-6">
+        <p className="text-md sm:text-lg mb-8">Regístrate y vive esta experiencia en:</p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 md:gap-8">
           <div className="bg-[#0a0e17] w-full h-20 sm:h-24 flex flex-col items-center justify-center rounded-md">
-            <div className="text-3xl sm:text-4xl font-bold text-white">{days}</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">{days}</div>
             <div className="text-[#20c9ca] text-xs sm:text-sm">Días</div>
           </div>
           <div className="bg-[#0a0e17] w-full h-20 sm:h-24 flex flex-col items-center justify-center rounded-md">
-            <div className="text-3xl sm:text-4xl font-bold text-white">{hours}</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">{hours}</div>
             <div className="text-[#20c9ca] text-xs sm:text-sm">Horas</div>
           </div>
           <div className="bg-[#0a0e17] w-full h-20 sm:h-24 flex flex-col items-center justify-center rounded-md">
-            <div className="text-3xl sm:text-4xl font-bold text-white">{minutes}</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">{minutes}</div>
             <div className="text-[#20c9ca] text-xs sm:text-sm">Minutos</div>
           </div>
           <div className="bg-[#0a0e17] w-full h-20 sm:h-24 flex flex-col items-center justify-center rounded-md">
-            <div className="text-3xl sm:text-4xl font-bold text-white">{seconds}</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">{seconds}</div>
             <div className="text-[#20c9ca] text-xs sm:text-sm">Segundos</div>
           </div>
         </div>

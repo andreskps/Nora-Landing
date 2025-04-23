@@ -14,40 +14,84 @@ export const FeaturesSection = () => {
         <AnimatedFeatureRow
           features={[
             {
-              text: "Una agente inmobiliaria... para asesorarte con inteligencia artificial",
+              text: "Busca propiedades según tus criterios",
               color: "bg-orange-400",
             },
             {
-              text: "Explora tu primera hogar con nosotros en casa",
+              text: "Filtra opciones en segundos",
               color: "bg-yellow-300",
             },
             {
-              text: "Inmueble seguro",
+              text: "Muestra fotos y videos reales",
               color: "bg-white",
+            },
+            {
+              text: "Envía recorridos virtuales",
+              color: "bg-green-600",
+            },
+            {
+              text: "Responde dudas al instante",
+              color: "bg-orange-400",
+            },
+            {
+              text: "Te avisa si aparece una nueva propiedad ideal",
+              color: "bg-yellow-300",
+            },
+            {
+              text: "Comparte ubicación y referencias",
+              color: "bg-white",
+            },
+            {
+              text: "Agenda visitas sin demoras",
+              color: "bg-green-600",
+            },
+            {
+              text: "Te recuerda cada cita",
+              color: "bg-orange-400",
             },
           ]}
           direction="right"
-          speed={1}
+          speed={7}
           className="mb-12"
         />
 
         <AnimatedFeatureRow
           features={[
             {
-              text: "Asesora a propietarios vendedores, compradores con inteligencia artificial",
+              text: "Reprograma si algo cambia",
               color: "bg-green-600",
             },
             {
-              text: "Una agente inmobiliaria... para asesorarte con inteligencia artificial",
+              text: "Confirma detalles con el dueño",
               color: "bg-white",
             },
             {
-              text: "Explora tu primera hogar con nosotros en casa",
+              text: "Envía direcciones listas para abrir en el mapa",
               color: "bg-orange-400",
+            },
+            {
+              text: "Te da tips antes de cada visita",
+              color: "bg-yellow-300",
+            },
+            {
+              text: "Te consigue varias opciones en un solo día",
+              color: "bg-green-600",
+            },
+            {
+              text: "Hace seguimiento sin que lo pidas",
+              color: "bg-white",
+            },
+            {
+              text: "Te conecta con servicios legales si los necesitás",
+              color: "bg-orange-400",
+            },
+            {
+              text: "Se queda contigo hasta que firmás",
+              color: "bg-yellow-300",
             },
           ]}
           direction="left"
-          speed={1}
+          speed={8}
           className="mb-20"
         />
       </div>

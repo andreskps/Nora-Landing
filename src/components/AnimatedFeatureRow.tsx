@@ -19,7 +19,7 @@ interface AnimatedFeatureRowProps {
 export function AnimatedFeatureRow({
   features,
   direction = "right",
-  speed = 300,
+  speed = 100,
   className = "",
 }: AnimatedFeatureRowProps) {
   const containerRef = useRef<HTMLDivElement>(null)
