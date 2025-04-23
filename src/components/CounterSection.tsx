@@ -2,37 +2,49 @@
 import React, { useEffect, useState } from "react";
 
 export const CounterSection = () => {
-  const [days, setDays] = useState(80);
-  const [hours, setHours] = useState(50);
-  const [minutes, setMinutes] = useState(11);
-  const [seconds, setSeconds] = useState(12);
+  const [days, setDays] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      if (seconds > 0) {
-        setSeconds(seconds - 1);
-      } else {
-        setSeconds(59);
-        if (minutes > 0) {
-          setMinutes(minutes - 1);
-        } else {
-          setMinutes(59);
-          if (hours > 0) {
-            setHours(hours - 1);
-          } else {
-            setHours(23);
-            if (days > 0) {
-              setDays(days - 1);
-            } else {
-              clearInterval(timer);
-            }
-          }
-        }
-      }
-    }, 1000);
+    // Fecha objetivo: 2 de junio de 2025 a las 9:30 a.m.
+    const targetDate = new Date("June 2, 2025 09:30:00").getTime();
 
+    const updateCountdown = () => {
+      // Fecha actual
+      const now = new Date().getTime();
+      
+      // Diferencia entre la fecha objetivo y la actual
+      const difference = targetDate - now;
+      
+      if (difference <= 0) {
+        setDays(0);
+        setHours(0);
+        setMinutes(0);
+        setSeconds(0);
+        return;
+      }
+      
+      // Cálculos para obtener días, horas, minutos y segundos
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+      
+      setDays(days);
+      setHours(hours);
+      setMinutes(minutes);
+      setSeconds(seconds);
+    };
+
+    // Actualizar inmediatamente
+    updateCountdown();
+    
+    // Actualizar cada segundo
+    const timer = setInterval(updateCountdown, 1000);
     return () => clearInterval(timer);
-  }, [days, hours, minutes, seconds]);
+  }, []);
 
   return (
     <section className="w-full bg-[#f8f7f2] text-black py-8 md:py-16 h-screen flex items-center justify-center">
