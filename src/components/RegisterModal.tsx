@@ -10,8 +10,8 @@ export const RegisterModal = ({ isOpen, onClose }: RegisterModalProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-black rounded-lg shadow-lg p-6 w-full max-w-md relative">
+    <div className="fixed inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center z-50">
+      <div className="bg-black rounded-lg shadow-lg p-6 w-full max-w-md relative border border-[#20c9ca]/30">
         {/* Logo en la esquina superior */}
         <div className="absolute top-4 left-4">
           <Image
