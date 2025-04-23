@@ -32,10 +32,10 @@ export default function Home() {
 
       <footer className="w-full bg-[#222222] text-white py-8 md:py-12">
         <div className="container mx-auto px-4 md:px-6">
-          {/* Footer Grid - más responsivo con mejor distribución en móviles */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
+          {/* Footer Grid - columnas actualizadas */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
             {/* Logo Column */}
-            <div className="col-span-2 sm:col-span-2 md:col-span-3 lg:col-span-1 mb-6 md:mb-0">
+            <div className="col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-1 mb-6 md:mb-0">
               <div className="mb-4">
                 <Image
                   src="/images/logo.png"
@@ -45,49 +45,35 @@ export default function Home() {
                   className="object-contain"
                 />
               </div>
-              {/* <p className="text-gray-400 text-sm pr-4 mb-4 md:mb-0">
-                Nora: El asistente inmobiliario inteligente que te ayuda a encontrar el hogar perfecto.
-              </p> */}
             </div>
 
-            {/* Links Columns - reorganizados para mejor vista en móvil */}
-            <div className="col-span-1">
-              <h3 className="font-medium text-gray-300 text-base mb-3">Propiedades</h3>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Casas</Link></li>
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Apartamentos</Link></li>
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Oficinas</Link></li>
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Locales</Link></li>
-              </ul>
-            </div>
-
-            <div className="col-span-1">
-              <h3 className="font-medium text-gray-300 text-base mb-3">Servicios</h3>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Comprar</Link></li>
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Vender</Link></li>
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Alquilar</Link></li>
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Invertir</Link></li>
-              </ul>
-            </div>
-
+            {/* Columna Nosotros */}
             <div className="col-span-1">
               <h3 className="font-medium text-gray-300 text-base mb-3">Nosotros</h3>
               <ul className="space-y-2 text-sm">
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Quiénes Somos</Link></li>
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Misión y Visión</Link></li>
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Equipo</Link></li>
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Tecnología</Link></li>
+                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Conoce a Nora</Link></li>
+                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Ayuda</Link></li>
+                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Q&A</Link></li>
+                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Noraletter</Link></li>
               </ul>
             </div>
 
+            {/* Columna Únete */}
             <div className="col-span-1">
-              <h3 className="font-medium text-gray-300 text-base mb-3">Contacto</h3>
+              <h3 className="font-medium text-gray-300 text-base mb-3">Únete</h3>
               <ul className="space-y-2 text-sm">
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">WhatsApp</Link></li>
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Teléfono</Link></li>
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Email</Link></li>
-                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Oficinas</Link></li>
+                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Tienes propiedades</Link></li>
+                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Proyecto N</Link></li>
+              </ul>
+            </div>
+
+            {/* Columna Te ayudamos */}
+            <div className="col-span-1">
+              <h3 className="font-medium text-gray-300 text-base mb-3">Te ayudamos</h3>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Quiero comprar</Link></li>
+                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Quiero Arrendar</Link></li>
+                <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Quiero Anunciar</Link></li>
               </ul>
             </div>
           </div>
