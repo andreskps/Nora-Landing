@@ -30,7 +30,7 @@ export const HeroSection = () => {
         </h2>
         <p className="text-gray-300 max-w-md">
           Te acompaña de inicio a fin, busca tu hogar desde WhatsApp o por
-          llamada, rápido, 24/7 y gratis.
+          llamada, rápido, 24/7 y gratis*.
         </p>
         <div className="pt-4">
           <button

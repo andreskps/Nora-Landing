@@ -131,7 +131,7 @@ export const SuscriptionSection = () => {
             </h2>
             <div className="w-16 h-1 bg-[#20c9ca] mx-auto mb-4"></div>
             <p className="text-white/80 mb-6">
-              Sobre NORA, el nuevo proyecto inmobiliario que cambiará tu forma de vivir.
+            Sobre NORA, el innovador proyecto que redefine los espacios donde vives.
             </p>
             <div className="flex flex-col items-center sm:flex-row sm:justify-center gap-2 mb-4">
               <button
