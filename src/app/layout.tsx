@@ -18,7 +18,10 @@ export const metadata: Metadata = {
   title: "Nora | Tu asistente inmobiliario inteligente",
   description: "Nora es una proptech que utiliza inteligencia artificial para integrar todos los aspectos del proceso inmobiliario en una experiencia fluida.",
   keywords: "inmobiliaria, proptech, inteligencia artificial, bienes raíces, propiedades",
-};
+  icons: {
+    icon: "/favicon.ico"
+},
+}
 
 export default function RootLayout({
   children,
