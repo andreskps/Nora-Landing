@@ -9,8 +9,6 @@ interface SubscriptionModalProps {
 // Mapa de códigos telefónicos a códigos de país (ISO 3166-1 alpha-2)
 const countryCodeMap: Record<string, string> = {
   '+57': 'co', // Colombia
-  '+51': 'pe', // Perú
-  '+52': 'mx', // México
   '+591': 'bo', // Bolivia
 };
 
